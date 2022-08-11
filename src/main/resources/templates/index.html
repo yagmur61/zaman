@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>hoşgeldiniz</title>
+    <link rel="stylesheet" type="text/css"/>
+
+</head>
+<style>
+    body {
+        background-image: url('https://wallpapercave.com/wp/wp4810861.jpg');
+        background-repeat: no-repeat;
+        width: 900px;
+        height:50px;
+    }
+</style>
+<body>
+<div style="width:0px; height:100px;  color:#FAEBD7; font:bold 30px tahoma; text-align: center;   position:relative; left: 650px; top:190px">Uygulamaya Hoşgeldiniz</div>
+<a th:href="@{/login }">
+    <button style="background-color: white;color: black; width:  15%;  height:70% ; position:relative;  left:520px; top:220px ">Giriş Yap </button> <br><br><br>
+</a>
+<a  th:href="@{/kayit }">
+    <button style="background-color: white;color: black; width: 15%;  height:70% ; position:relative;  left: 800px; top:150px">  Kayıt Ol </button> <br><br><br>
+</a>
+
+
+
+</body>
+</html>

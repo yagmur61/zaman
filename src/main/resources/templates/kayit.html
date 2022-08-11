@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:background-color="http://www.w3.org/1999/xhtml">
+
+<style>
+    body {
+        background-image: url('https://i.pinimg.com/originals/a6/12/11/a61211d4bae2f8957bf921fad6cb5258.jpg');
+        background-repeat: no-repeat;
+        width: 900px;
+        height:50px;
+    }
+</style>
+
+
+
+<form th:action="@{/kayit}" method="post" th:object="${kullanici}" th:align="center">
+    <h2>KAYIT OL</h2>
+    <table border="1" th:align="center" >
+        <tr>
+            <td>Adınız *</td>
+            <td>
+                <input type="text" th:field="*{adi}" size="40"  placeholder="Lütfen,Adınızı giriniz." required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Soyadınız *</td>
+            <td>
+                <input type="text" th:field="*{soyadi}" size="40"    placeholder="Lütfen,Soyadınızı Giriniz." required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>E-Posta Adresi *</td>
+            <td>
+                <input type="email" th:field="*{email}" placeholder="Lütfen,E-mail giriniz." size="40" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Şifre *</td>
+            <td>
+                <input type="password" th:field="*{sifre}"  placeholder="Lütfen,Şifrenizi Giriniz." size="40" required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>GSM Numarası *</td>
+            <td>
+                <input type="text" th:field="*{telNo}"  size="40"  placeholder="Lütfen,Telefon numaranızı giriniz." required/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Cinsiyet *</td>
+            <td>
+                <input type="radio" th:field="*{cinsiyet}" value="Erkek" />Erkek
+                <input type="radio"  th:field="*{cinsiyet}" value="Kadin" />Kadın<br/>
+            </td>
+        </tr>
+        <tr>
+           <td colspan="2">
+               <button type="submit"  style=" background-color:Orange  " >Kayıt Ol</button>
+           </td>
+        </tr>
+        <br><br>
+        <div class="container signin">
+            <p>Hesabınız Var Mı?  <a th:href="@{/login}">Giriş Yap!</a>.</p>
+        </div>
+    </table>
+</form>
+</html>

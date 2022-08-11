@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:background-color="http://www.w3.org/1999/xhtml">
+
+
+<style>
+    body {
+        background-image: url('https://img.freepik.com/premium-photo/copy-space-flowers-wedding_23-2148474745.jpg?w=2000');
+        background-repeat: no-repeat;
+        width: 900px;
+        height:50px;
+    }
+</style>
+<body>
+<form th:action="@{/save}" method="post" th:object="${urun}" th:align="center">
+<h2>Yeni Ürün Ekle</h2>
+<table border="1" th:align="center" >
+                <tr>
+                    <td>Ürün Adı *</td>
+                    <td>
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="text" th:field="*{urun_adi}"  size="40" class="form-control" placeholder="Lütfen, Ürün Adını Giriniz." />
+                </tr>
+
+                <tr>
+                    <td>Ürün Bilgisi *</td>
+                    <td>
+                        <input type="text" th:field="*{urun_bilgi}"  size="40" class="form-control" placeholder="Lütfen, Ürün Bilgisini Giriniz." /></td>
+                </tr>
+
+
+
+                <tr>
+                     <td>Ürün Fiyatı *</td>
+                <td>
+                 <input type="text" th:field="*{urun_fiyat}"  size="40" class="form-control" placeholder="Lütfen, Ürün Fiyatını Giriniz."/></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>Ürün Renk *</td>
+                    <td><input type="text" th:field="*{urun_renk}"  size="40" class="form-control" placeholder="Lütfen, Ürün Rengini Giriniz."/></td>
+                </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit" style=" background-color:Orange  "  >Kaydet</button> </td>
+            </tr>
+            </table>
+        </form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+
+<style>
+    body {
+        background-image: url('https://wallpaper.dog/large/10754569.jpg');
+        background-repeat: no-repeat;
+        width: 900px;
+        height:50px;
+    }
+</style>
+<body>
+<div align = "center" >
+    <h2 >Ürünler</h2>
+    <tr>
+        <div align = "center" >
+            <h3><a  th:href="@{'/yeni'}">Yeni Ürün Ekle</a></h3>
+        </div>
+    </tr>
+    <tr>
+        <div class="col-sm-7" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table table-striped ">
+                    <thead >
+                    <tr>
+                        <th>Ürün ID</th>
+                        <th>Ürün Adı</th>
+                        <th>Ürün Bilgisi</th>
+                        <th>Ürün Fiyatı </th>
+                        <th>Ürün Renk</th>
+                        <th>Ürün Adet</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                        <th></th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="urun : ${listurun }">
+                        <td th:text="${urun.id}">Ürün ID</td>
+                        <td th:text="${urun.urun_adi}">Ürün Adı</td>
+                        <td th:text="${urun.urun_bilgi}">Ürün Bilgisi</td>
+                        <td th:text="${urun.urun_fiyat}">Ürün Fiyatı</td>
+                        <td th:text="${urun.urun_renk}">Ürün Renk</td>
+                        <td>
+                                       <select id="adet">
+                                           <option value="1">1</option>
+                                           <option value="2">2</option>
+                                           <option value="3">3</option>
+                                           <option value="4">4</option>
+                                       </select>
+                                   </td>
+
+
+                        <td>
+                            <a th:href="@{'/duzenle/' + ${urun.id}}">Düzenle</a>
+                        </td>
+                        <td>
+                            <a th:href="@{'/sil/' + ${urun.id}}">Sil</a>
+                        </td>
+
+                        <td>
+                            <a  th:href="@{/sepet }">Sepete Ekle</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+    </tbody>
+    </table>
+</div>
+  </body>
+</html>
