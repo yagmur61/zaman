@@ -4,6 +4,7 @@ import com.eticaret.zaman.kullanici.Kullanici;
 import com.eticaret.zaman.urun.Urun;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Sepet {
@@ -12,9 +13,9 @@ public class Sepet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "urun_id")
-    private Urun urun;
+    private List<Urun> urun;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "kullanici_id")
@@ -23,7 +24,7 @@ public class Sepet {
     public Sepet() {
     }
 
-    public Sepet(Long id, Urun urun, Kullanici kullanici) {
+    public Sepet(Long id, List<Urun> urun, Kullanici kullanici) {
         this.id = id;
         this.urun = urun;
         this.kullanici = kullanici;
@@ -37,11 +38,11 @@ public class Sepet {
         this.id = id;
     }
 
-    public Urun getUrun() {
+    public List<Urun> getUrun() {
         return urun;
     }
 
-    public void setUrun(Urun urun) {
+    public void setUrun(List<Urun> urun) {
         this.urun = urun;
     }
 

@@ -5,6 +5,7 @@ import com.eticaret.zaman.kullanici.Kullanici;
 import com.eticaret.zaman.urun.Urun;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -16,9 +17,10 @@ public class SepetOgesi {
     private  Long id;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "urun_id")
-    private Urun urun;
+    private List<Urun> urun;
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "kullanici_id")
@@ -33,11 +35,11 @@ public class SepetOgesi {
         this.id = id;
     }
 
-    public Urun getUrun() {
+    public List<Urun> getUrun() {
         return urun;
     }
 
-    public void setUrun(Urun urun) {
+    public void setUrun(List<Urun> urun) {
         this.urun = urun;
     }
 
