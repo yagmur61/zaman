@@ -16,6 +16,9 @@
     }
 </style>
 <body>
+
+<form th:action="@{/save}" method="post" th:object="${sepet}" th:align="center">
+
 <div align = "center" >
     <h2 >Alışveriş Sepeti</h2>
 
@@ -36,18 +39,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr  th:each="sepet : ${sepetOgesis }">
-                        <td th:text="${sepet.urun.id}">Ürün ID</td>
+                    <tr  th:each="sepet : ${sepetList }">
+                        <td th:text="${sepet.id}">Ürün ID</td>
                         <td th:text="${sepet.urun.urun_adi}">Ürün Adı</td>
                         <td th:text="${sepet.urun.urun_bilgi}">Ürün Bilgisi</td>
                         <td th:text="${sepet.urun.urun_fiyat}">Ürün Fiyatı</td>
                         <td th:text="${sepet.urun.urun_renk}">Ürün Renk</td>
 
 
-
-
                         <td>
-                            <a  th:href="@{/ode }">Odeme</a>
+                            <a  th:href="@{'/ode/' + ${urun}}">Sepete Ekle</a>
                         </td>
                     </tr>
 

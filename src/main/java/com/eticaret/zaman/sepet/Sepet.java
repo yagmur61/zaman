@@ -15,19 +15,14 @@ public class Sepet {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "urun_id")
-    private List<Urun> urun;
-
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "kullanici_id")
-    private Kullanici kullanici;
+     private List<Urun> urun;
 
     public Sepet() {
     }
 
-    public Sepet(Long id, List<Urun> urun, Kullanici kullanici) {
+    public Sepet(Long id, List<Urun> urun) {
         this.id = id;
         this.urun = urun;
-        this.kullanici = kullanici;
     }
 
     public Long getId() {
@@ -46,11 +41,4 @@ public class Sepet {
         this.urun = urun;
     }
 
-    public Kullanici getKullanici() {
-        return kullanici;
-    }
-
-    public void setKullanici(Kullanici kullanici) {
-        this.kullanici = kullanici;
-    }
 }
