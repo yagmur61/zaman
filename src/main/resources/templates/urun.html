@@ -34,7 +34,6 @@
                         <th>Ürün Bilgisi</th>
                         <th>Ürün Fiyatı </th>
                         <th>Ürün Renk</th>
-                        <th>Ürün Adet</th>
                         <th>Düzenle</th>
                         <th>Sil</th>
                         <th></th>
@@ -49,15 +48,6 @@
                         <td th:text="${urun.urun_bilgi}">Ürün Bilgisi</td>
                         <td th:text="${urun.urun_fiyat}">Ürün Fiyatı</td>
                         <td th:text="${urun.urun_renk}">Ürün Renk</td>
-                        <td>
-                                       <select id="adet">
-                                           <option value="1">1</option>
-                                           <option value="2">2</option>
-                                           <option value="3">3</option>
-                                           <option value="4">4</option>
-                                       </select>
-                                   </td>
-
 
                         <td>
                             <a th:href="@{'/duzenle/' + ${urun.id}}">Düzenle</a>

@@ -14,20 +14,20 @@ public class Urun {
     private String urun_bilgi;
     private int urun_fiyat;
     private String urun_renk;
-   private  int urun_adet;
+
 
 
 
     public Urun() {
     }
 
-    public Urun(Long id, String urun_adi, String urun_bilgi, int urun_fiyat, String urun_renk,int urun_adet) {
+    public Urun(Long id, String urun_adi, String urun_bilgi, int urun_fiyat, String urun_renk) {
         this.id = id;
         this.urun_adi = urun_adi;
         this.urun_bilgi = urun_bilgi;
         this.urun_fiyat = urun_fiyat;
         this.urun_renk = urun_renk;
-       this.urun_adet = urun_adet;
+
     }
 
     public Long getId() {
@@ -68,14 +68,6 @@ public class Urun {
 
     public void setUrun_renk(String urun_renk) {
         this.urun_renk = urun_renk;
-    }
-
-   public int getUrun_adet() {
-     return urun_adet;
-    }
-
-    public void setUrun_adet(int urun_adet) {
-        this.urun_adet = urun_adet;
     }
 
 }

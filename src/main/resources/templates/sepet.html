@@ -30,20 +30,19 @@
                         <th>Ürün Bilgisi</th>
                         <th>Ürün Fiyatı </th>
                         <th>Ürün Renk</th>
-                        <th>Ürün Adet</th>
                         <th>Ödeme</th>
 
 
                     </tr>
                     </thead>
                     <tbody>
-                    <tr  th:each="sepet : ${sepetList }">
+                    <tr  th:each="sepet : ${sepetOgesis }">
                         <td th:text="${sepet.urun.id}">Ürün ID</td>
                         <td th:text="${sepet.urun.urun_adi}">Ürün Adı</td>
                         <td th:text="${sepet.urun.urun_bilgi}">Ürün Bilgisi</td>
                         <td th:text="${sepet.urun.urun_fiyat}">Ürün Fiyatı</td>
                         <td th:text="${sepet.urun.urun_renk}">Ürün Renk</td>
-                        <td th:selected="${sepet.urun.urun_adet}">Ürün Adet</td>
+
 
 
 

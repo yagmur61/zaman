@@ -1,33 +1,28 @@
 package com.eticaret.zaman.sepet;
 
 import com.eticaret.zaman.kullanici.Kullanici;
+import com.eticaret.zaman.sepetOgesi.SepetOgesi;
+import com.eticaret.zaman.sepetOgesi.SepetOgesiRepo;
 import com.eticaret.zaman.urun.Urun;
+import com.eticaret.zaman.urun.UrunRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 @Service
 public class SepetService  {
 
     @Autowired
-    private SepetRepo sepetRepo;
+    private SepetOgesiRepo sepetOgesiRepo;
 
 
-    public List<Sepet> listAll(){
-        return sepetRepo.findAll();
+    public List<SepetOgesi> listSepetOgesis(Kullanici kullanici){
+        return sepetOgesiRepo.findByKullanici(kullanici);
     }
-
-    public void save(Sepet sepet){
-        sepetRepo.save(sepet);
-
-    }
-    public Sepet get(long id){
-        return sepetRepo.findById(id).get();
-    }
-
-    public void delete(long id) {
-        sepetRepo.deleteById(id);
-    }
+   public  void save(SepetOgesi sepetOgesi){
+        sepetOgesiRepo.save(sepetOgesi);
+}
 
 }
