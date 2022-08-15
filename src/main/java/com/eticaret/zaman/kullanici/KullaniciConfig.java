@@ -51,6 +51,6 @@ public class KullaniciConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/urun")
                 .permitAll()
                 .and()
-                .logout().logoutSuccessUrl("/").permitAll();
+                .logout().logoutSuccessUrl("/login").permitAll();
     }
 }

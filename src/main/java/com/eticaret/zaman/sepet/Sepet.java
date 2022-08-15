@@ -12,17 +12,19 @@ public class Sepet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private  Long kullanici_id;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "urun_id")
-     private List<Urun> urun;
+     private List<Urun> uruns;
 
     public Sepet() {
     }
 
-    public Sepet(Long id, List<Urun> urun) {
+    public Sepet(Long id, Long kullanici_id, List<Urun> uruns) {
         this.id = id;
-        this.urun = urun;
+        this.kullanici_id = kullanici_id;
+        this.uruns = uruns;
     }
 
     public Long getId() {
@@ -33,12 +35,19 @@ public class Sepet {
         this.id = id;
     }
 
-    public List<Urun> getUrun() {
-        return urun;
+    public Long getKullanici_id() {
+        return kullanici_id;
     }
 
-    public void setUrun(List<Urun> urun) {
-        this.urun = urun;
+    public void setKullanici_id(Long kullanici_id) {
+        this.kullanici_id = kullanici_id;
     }
 
+    public List<Urun> getUruns() {
+        return uruns;
+    }
+
+    public void setUruns(List<Urun> uruns) {
+        this.uruns = uruns;
+    }
 }

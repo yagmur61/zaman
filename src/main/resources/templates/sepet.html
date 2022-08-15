@@ -29,10 +29,7 @@
                     <thead >
                     <tr>
                         <th>Ürün ID</th>
-                        <th>Ürün Adı</th>
-                        <th>Ürün Bilgisi</th>
-                        <th>Ürün Fiyatı </th>
-                        <th>Ürün Renk</th>
+
                         <th>Ödeme</th>
 
 
@@ -41,14 +38,9 @@
                     <tbody>
                     <tr  th:each="sepet : ${sepetList }">
                         <td th:text="${sepet.id}">Ürün ID</td>
-                        <td th:text="${sepet.urun.urun_adi}">Ürün Adı</td>
-                        <td th:text="${sepet.urun.urun_bilgi}">Ürün Bilgisi</td>
-                        <td th:text="${sepet.urun.urun_fiyat}">Ürün Fiyatı</td>
-                        <td th:text="${sepet.urun.urun_renk}">Ürün Renk</td>
-
 
                         <td>
-                            <a  th:href="@{'/ode/' + ${urun}}">Sepete Ekle</a>
+                            <a  th:href="@{'/ode/'}">Sepete Ekle</a>
                         </td>
                     </tr>
 

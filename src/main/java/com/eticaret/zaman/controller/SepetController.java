@@ -29,6 +29,7 @@ public class SepetController {
         model.addAttribute("sepetList",sepetList);
         return "sepet";
 
+
     }
 
     @RequestMapping(value = "/kaydet", method = RequestMethod.POST)
